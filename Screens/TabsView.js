@@ -57,25 +57,13 @@ let mainSlider =
         "img_url": "http://cdn.cinepop.com.br/2018/03/residentevilserie.jpg"
     }
 ]
-
 let feed = [
-    {
-      "id": "7028724",
-      "name": "resident evil",
-      "img_url": "http://cdn.cinepop.com.br/2018/03/residentevilserie.jpg"
-    },
     {
       "id": "90233",
       "name": "rick and morty",
       "img_url": "https://imgc.allpostersimages.com/img/print/posters/rick-morty-cast-of-emotions_a-G-14537695-0.jpg"
-    },
-    {
-      "id": "80233",
-      "name": "13 reasons why",
-      "img_url": "https://lhsstatesman.com/wp-content/uploads/2017/05/13-reasons-why.jpg"
     }
 ]
-
 let action = [
   {
     "id": "11128724",
@@ -86,8 +74,15 @@ let action = [
     "id": "1342128724",
     "name": "the matrix reload",
     "img_url": "https://occ-0-999-1001.1.nflxso.net/art/907c8/f8c9b526241fc592533ff1aa2d533ed08a2907c8.jpg"
+  },
+  {
+    "id": "144d42128724",
+    "name": "the matrix revolutions",
+    "img_url": "https://vignette.wikia.nocookie.net/cinemorgue/images/8/88/The-Matrix-Revolutions.jpg/revision/latest?cb=20150922025540"
   }
 ]
+let feedSerires = feed.concat(mainSlider).slice(0, 3);
+console.log(feedSerires);
 class FirstScreen extends Component {
     static navigationOptions = {
       header: null,
@@ -123,7 +118,7 @@ class FirstScreen extends Component {
                   keyExtractor={this._keyExtractor}
                   ItemSeparatorComponent={ () => <View style={{ width: 20}}/> }
                   renderItem={({item}) => this._renderItem(item)} 
-                  data={feed}
+                  data={feedSerires}
                 />
 
               <H3 style={styles.headingTitle}>
@@ -238,7 +233,7 @@ const styles = StyleSheet.create({
       width: undefined,
       height: undefined,
       justifyContent: 'center',
-      backgroundColor:'#000'
+      backgroundColor:'#fff'
     },
     containerLogo: {
       backgroundColor:'#fff',
@@ -254,9 +249,9 @@ const styles = StyleSheet.create({
       color:'#a4aab3'
     },
     headingTitle: {
-      padding:20,
-      fontSize:16,
+      padding:18,
+      fontSize:14,
       fontWeight:'bold',
-      color:'#fff'
+      color:'#000'
     }
 });
